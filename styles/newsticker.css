@@ -1,0 +1,83 @@
+ol,ul{list-style:none}
+#news_ticker {
+	background: rgb(255, 255, 255); /* Fall-back for browsers that don't support rgba */
+    background: rgba(255, 255, 255, .4);	
+	height: 300px;
+	width:200px;
+	overflow: hidden;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	-webkit-box-shadow: inset 0px 0px 1px rgba(0,0,0,0.2);
+	-moz-box-shadow: inset 0px 1px 1px rgba(0,0,0,0.2);
+	box-shadow: inset 0px 0px 1px rgba(0,0,0,0.2);
+	text-align:justify;
+}  
+ul {
+	float: left;
+	padding-left: 10px;
+	padding-right:10px;
+	-webkit-animation: ticker 40s cubic-bezier(1, 0, .5, 0) infinite;
+	-moz-animation: ticker 40s cubic-bezier(1, 0, .5, 0) infinite;
+	-ms-animation: ticker 40s cubic-bezier(1, 0, .5, 0) infinite;
+	animation: ticker 40s cubic-bezier(1, 0, .5, 0) infinite;
+}
+ul:hover {
+	-webkit-animation-play-state: paused;
+	-moz-animation-play-state: paused;
+	-ms-animation-play-state: paused;
+	animation-play-state: paused;
+}
+li {line-height: 25px;}
+@-webkit-keyframes ticker {
+	0%   {margin-top: 0;}
+	5%   {margin-top: -40px;}
+	10%  {margin-top: -80px;}
+	20%  {margin-top: -120px;}
+	30%  {margin-top: -200px;}
+	50%  {margin-top: -300px;}
+	60%  {margin-top: -450px;}
+	70%  {margin-top: -650px;}
+	80%  {margin-top: -800px;}
+	90%  {margin-top: -950px;}
+	100% {margin-top: -1200px;}
+}
+@-moz-keyframes ticker {
+	0%   {margin-top: 0;}
+	5%   {margin-top: -40px;}
+	10%  {margin-top: -80px;}
+	20%  {margin-top: -120px;}
+	30%  {margin-top: -200px;}
+	50%  {margin-top: -300px;}
+	60%  {margin-top: -450px;}
+	70%  {margin-top: -650px;}
+	80%  {margin-top: -800px;}
+	90%  {margin-top: -950px;}
+	100% {margin-top: -1200px;}
+}
+@-ms-keyframes ticker {
+	0%   {margin-top: 0;}
+	5%   {margin-top: -40px;}
+	10%  {margin-top: -80px;}
+	20%  {margin-top: -120px;}
+	30%  {margin-top: -200px;}
+	50%  {margin-top: -300px;}
+	60%  {margin-top: -450px;}
+	70%  {margin-top: -650px;}
+	80%  {margin-top: -800px;}
+	90%  {margin-top: -950px;}
+	100% {margin-top: -1200px;}
+}
+@keyframes ticker {
+	0%   {margin-top: 0;}
+	5%   {margin-top: -40px;}
+	10%  {margin-top: -80px;}
+	20%  {margin-top: -120px;}
+	30%  {margin-top: -200px;}
+	50%  {margin-top: -300px;}
+	60%  {margin-top: -450px;}
+	70%  {margin-top: -650px;}
+	80%  {margin-top: -800px;}
+	90%  {margin-top: -950px;}
+	100% {margin-top: -1200px;}
+}

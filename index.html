@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<title>SOC</title>
+<meta charset="iso-8859-1">
+<link rel="stylesheet" href="styles/layout.css" type="text/css">
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
+<script src="js/jquery_001.js"></script>
+<script src="js/jquery_002.js"></script>
+<script>
+	//menu top fixed
+	var num = 50; //number of pixels before modifying styles
+
+	jQuery(window).bind('scroll', function () {
+		if (jQuery(window).scrollTop() > num) {
+			jQuery('.row15').addClass('fixed');
+			jQuery('.row15').css('display', 'block');
+			jQuery('.row15').css('margin', '0 auto');
+			jQuery('.row15').css('width', '100%');
+			} else {
+			jQuery('.row1').removeClass('fixed');
+			jQuery('.row15').css('display', 'none');
+		}
+	});
+	//scroll
+	jQuery(document).ready(function () {
+		jQuery('a.menu').on('click', function (e) {
+			e.preventDefault();
+			var target = this.hash,
+				targetx = jQuery(target);
+			jQuery('html, body').stop().animate({
+				'scrollTop': targetx.offset().top
+			}, 900, 'linear', function () {
+				window.location.hash = target;
+			});
+		});
+	});
+	
+	// fixed entry
+	jQuery(function() {
+		jQuery('#fixed_entry').hover(
+			function () {
+				jQuery('#plus img').stop().transition({ rotate: '180deg' }, function(){
+					jQuery('#fixed_entry').stop(true,true).animate({ 'left': 0 }, 600, 'easeOutCubic');
+				});
+			},
+			function () {
+				jQuery('#plus img').transition({ rotate: '0deg' }, function(){
+					jQuery('#fixed_entry').stop(true,true).animate({ 'left': -(jQuery('#fixed_entry').innerWidth() - (jQuery('#plus').width() + 6)) }, 600, 'easeOutCubic');
+				});
+			});
+	});
+	
+	//scrolling
+	$(function() {
+		// make the first two slides "current"
+		$(".community li:lt(2)").addClass("current");
+		setInterval(function() {
+			var current = $(".community .current"); // current slides
+			var slidein = $(".community .current:last ~ li:lt(2)"); // next slides
+			if (slidein.length == 0) {
+				slidein = $(".community li:lt(2)");
+			}
+			slidein.addClass("fadein"); // make visible, absolutely positioned
+			slidein.eq(0).css({ left: "100%" }).animate({ left: 0 });
+			slidein.eq(1).css({ left: "150%" }).animate({ left: "50%" }, function() {
+				// reset and animate the "left" property
+				// reset classes when animation is complete
+				current.removeClass("current");
+				slidein.removeClass("fadein").addClass("current");
+			});
+		}, 2000);
+	});
+</script>
+
+</head>
+<body>
+	<label id="up"></label>
+	<div class="row1">
+	  <header id="header" class="clear">
+		<hgroup>
+		  <h1><a href="#">SOC</a></h1>
+		</hgroup>
+		<nav>
+		  <ul>
+			<li><a class="menu" href="#about">About Us</a></li>
+			<li><a class="menu" href="#mission">Mission</a></li>
+		  </ul>
+		</nav>
+	  </header>
+	</div>
+	<div class="row15">
+	  <header id="header" class="clear">
+		<hgroup>
+		  <h1><a class="menu" href="#up">SOC</a></h1>
+		</hgroup>
+		<nav>
+		  <ul>
+			<li><a class="menu" href="#about">About Us</a></li>
+			<li><a class="menu" href="#mission">Mission</a></li>
+		  </ul>
+		</nav>
+	  </header>
+	</div>
+	<!-- content -->
+	<div class="wrapper row2">
+		<div id="container" class="clear">
+		<!-- content body -->
+			<div id="homepage">
+			  <!-- One Quarter -->
+			  <section id="latest" class="clear">
+				<!--Main Content-->
+					<article class="one_quarter"><!--related people-->
+						<aside>
+							<section>
+								<img src="images/people.jpg"/>
+							</section>
+						</aside>
+						<aside>
+							<section>
+								<img src="images/people.jpg"/>
+							</section>
+						</aside>
+						<aside>
+							<section>
+								<img src="images/people.jpg"/>
+							</section>
+						</aside>
+					</article><!--end related people-->
+					<article class="oneone_quarter">
+						<img src="images/social_networking.jpg"/>
+						<div class="clear"></div>
+						<div class="fl_left">&#8226;</div>
+						<div class="fl_left dashed"></div>
+						<div class="fl_left">&#8226;</div>
+						<div class="clear"></div>
+						<!-- about us -->
+						<center>
+							<div id="about"><h1>ABOUT US</h1></div>
+						</center>
+						<div class="text">
+							Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+						</div>
+						<div class="img_about">
+							<img src="images/about.jpg"/>
+						</div>
+						
+						<!-- mission -->
+						<center>
+							<div id="mission"><h1>MISSION</h1></div>
+						</center>
+						<div class="text">
+							Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+						</div>
+						<div class="img_about">
+							<img src="images/mission.jpg"/>
+						</div>
+					</article>
+				<!--End Main Content-->
+				<!--Right Column-->
+					<aside class="two_quarter">
+					  <section class="right">
+						<a href="">
+							<div class="fl_left">
+								<img src="images/facebook.gif"/>
+							</div>
+							<div class="fl_left align-down">
+								<h6>Facebook</h6>
+							</div>
+							<div class="clear"></div>
+						</a>
+						<a href="">
+							<div class="fl_left">
+								<img src="images/twitter.gif"/>
+							</div>
+							<div class="fl_left align-down tw">
+								<h6>Twitter</h6>
+							</div>
+							<div class="clear"></div>
+						</a>
+					  </section>
+					  <section class="communitys text">
+						Community
+						<div class="community">
+							<ul>
+								<li><img src="images/abs.jpg"></li>
+								<li><img src="images/anc.jpg"></li>
+								<li><img src="images/i.jpg"></li>
+								<li><img src="images/jam.jpg"></li>
+							</ul>
+						</div>
+					  </section>
+					  <section class="archive text">
+						Archive<br/><br/>
+						<a href="">- 2013</a><br/>
+						<a href="">- 2012</a><br/>
+						<a href="">- 2011</a>
+					  </section>
+					  <section class="testimonial text">
+						Testimonial<br/><br/>
+						Lorem Ipsum is simply dummy text of the
+						printing and typesetting industry. Lorem
+						Ipsum has been the industry's standard
+						dummy text ever since the 1500s
+					  </section>
+					</aside>
+				<!--End Right Column-->
+			  </section>
+			</div>
+		</div>
+	</div>
+	<div id="fixed_entry" class="clearfix">
+		<div class="fl"><a href="">
+			<img src="images/hidden_entry.png" alt="ENTRY"></a>
+		</div>
+		<div id="plus"><img src="images/fixed_entry.png" alt=""></div>
+	</div><!--fixed_entry-->
+
+	<!-- Footer -->
+	<center class="footer">
+		<h1>Scroll to Top</h1>
+		<a class="menu" href="#up"><div id="triangle-up"></div></a>
+	</center>
+	<div class="wrapper row3">
+		<footer id="footer" class="clear"></footer>
+	</div>
+	<div class="text copyright">Copyright@2013</div>
+</body>
+</html>
